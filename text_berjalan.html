@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <Title>Teks berjalan pada kotak teks</Title>
+    </head>
+
+<script language =javascript>
+    <!---
+        function parameter()
+        {
+            this.tulisan = "Tulisan ini berjalan dari kanan ke kiri pada sebuah kotak teks";
+            this.kecepatan = 200;
+            this.posisi = 0;
+            this.tulisangulung = " ";
+        }
+
+        var gulung = new parameter();
+
+        function gulungtulisan()
+        {
+            if (gulung.posisi > gulung.tulisan.length)
+            {
+                gulung.posisi = 0;
+            }
+            gulung.tulisangulung = " ";
+            gulung.tulisangulung += gulung.tulisan.substring(gulung.posisi, gulung.tulisan.length);
+            gulung.tulisangulung +=
+            gulung.tulisan.substring(0,gulung.posisi);
+            
+            document.formgulung.kotakgulung.value = gulung.tulisangulung;
+            gulung.posisi++;
+
+            setTimeout("gulungtulisan()", gulung.kecepatan);
+        }
+    //-->
+</script>
+
+<body onload='gulungtulisan()'>
+    <div align="center">
+        <form name="formgulung"><input name="kotakgulung" size="50">
+        </form>
+    </div>
+</body>
+</html>
