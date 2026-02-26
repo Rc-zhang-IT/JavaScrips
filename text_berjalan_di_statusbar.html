@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Text berjalan pada statusbar</title>
+    </head>
+
+    <script languague= javascript>
+        function parameter()
+        {
+            this.tulisan = "Tulisan ini berjalan dari kanak ke kiri pada statusbar. ";
+            this.kecepatan = 100;
+            this.posisi = 0;
+            this.tulisangulung = " ";
+        }
+
+        var gulung = new parameter();
+
+        function gulungtulisan()
+        {
+            if (gulung.posisi > gulung.tulisan.length)
+        {
+            gulung.posisi = 0;
+        }
+        gulung.tulisangulung = " ";
+        gulung.tulisangulung += gulung.tulisan.substring(gulung.posisi, gulung.tulisan.length);
+        gulung.tulisangulung += gulung.tulisan.substring(0,gulung.posisi);
+
+        windows.status = gulung.tulisangulung;
+        gulung.posisi++;
+
+        setTimeout("gulungtulisan()", gulung.kecepatan);
+        }
+        //-->
+    </script>
+    <body onload="gulungtulisan()">
+        
+    </body>
+</html>
